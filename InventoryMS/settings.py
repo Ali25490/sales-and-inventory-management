@@ -16,9 +16,15 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = [
-    "sales-and-inventory-management-7npt.onrender.com",
-    "localhost",
-    "127.0.0.1",
+    h.strip()
+    for h in os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+    if h.strip()
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin.strip()
 ]
 
 
