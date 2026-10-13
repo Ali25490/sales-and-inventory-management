@@ -141,3 +141,4 @@ cd sales-and-inventory-management
 - [Stephen Murichu](https://github.com/munuhee)
 
                                             Happy coding! 🚀
+# sales-and-inventory-management
