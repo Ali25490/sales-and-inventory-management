@@ -1,7 +1,7 @@
 {% extends "store/base.html" %}
 {% load static %}
 <!-- Page title  -->
-{% block title %}Create sale{% endblock title %}
+{% block title %}Savdo yaratish{% endblock title %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -11,7 +11,7 @@
 {% endblock stylesheets %}
 
 <!-- Page Heading -->
-<h2>Add sale</h2>
+<h2>Sotish qo'shing</h2>
 
 <!-- Page content  -->
 {% block content %}
@@ -20,7 +20,7 @@
     <div class="mb-4">
         <a href="{% url 'saleslist' %}" class="btn btn-outline-success">
             <i class="fas fa-arrow-left me-2"></i>
-            Go back
+            Ortga qaytish
         </a>
     </div>
 
@@ -31,18 +31,18 @@
             <div class="col-lg-8 mb-4">
                 <div class="card border-light shadow-sm">
                     <div class="card-header bg-success text-white">
-                        <h5 class="mb-0">Sale Items</h5>
+                        <h5 class="mb-0">Sotish buyumlari</h5>
                     </div>
                     <div class="card-body">
                         <!-- Search item -->
                         <div class="mb-4">
-                            <label for="searchbox_items" class="form-label">Search Item:</label>
+                            <label for="searchbox_items" class="form-label">Qidiruv elementi:</label>
                             <select class="form-select select2" name="searchbox_items" id="searchbox_items" aria-label="Search items"></select>
                         </div>
 
                         <!-- Delete all items from sale -->
                         <button type="button" class="btn btn-danger btn-sm mb-4 deleteAll">
-                            <i class="fas fa-trash-alt me-2"></i> Delete All Items
+                            <i class="fas fa-trash-alt me-2"></i> Barcha elementlarni o'chirish
                         </button>
 
                         <!-- Items Table -->
@@ -52,10 +52,10 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total</th>
-                                        <th class="text-center">Actions</th>
+                                        <th>Narxi</th>
+                                        <th>Miqdori</th>
+                                        <th>Jami</th>
+                                        <th class="text-center">Harakatlar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,40 +71,40 @@
             <div class="col-lg-4 mb-4">
                 <div class="card border-light shadow-sm">
                     <div class="card-header bg-success text-white">
-                        <h5 class="mb-0">Sale Details</h5>
+                        <h5 class="mb-0">Sotish tafsilotlari</h5>
                     </div>
                     <div class="card-body">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="customer" class="form-label">Customer</label>
+                            <label for="customer" class="form-label">Mijoz</label>
                             <select name="customer" class="form-select" id="customer" aria-label="Customer" required>
-                                <option value="" selected disabled hidden>Select the customer</option>
+                                <option value="" selected disabled hidden>Xaridorni tanlang</option>
                                 {% for customer in customers %}
                                 <option value="{{ customer.value }}">{{ customer.label }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="sub_total" class="form-label">Subtotal</label>
+                            <label for="sub_total" class="form-label">Oraliq jami</label>
                             <input name="sub_total" type="number" class="form-control" id="sub_total" aria-label="Subtotal" required>
                         </div>
                         <div class="mb-3">
-                            <label for="tax_percentage" class="form-label">Tax Inclusive (%)</label>
+                            <label for="tax_percentage" class="form-label">Soliqlar bilan (%)</label>
                             <input name="tax_percentage" type="number" class="form-control" id="tax_percentage" aria-label="Tax Inclusive" value="0" required>
                         </div>
                         <div class="mb-3">
-                            <label for="tax_amount" class="form-label">Tax Amount</label>
+                            <label for="tax_amount" class="form-label">Soliq miqdori</label>
                             <input name="tax_amount" type="number" class="form-control" id="tax_amount" aria-label="Tax Amount" required>
                         </div>
                         <div class="mb-3">
-                            <label for="grand_total" class="form-label">Grand Total</label>
+                            <label for="grand_total" class="form-label">Umumiy jami</label>
                             <input name="grand_total" type="number" class="form-control" id="grand_total" aria-label="Grand Total" required>
                         </div>
                         <div class="mb-3">
-                            <label for="amount_paid" class="form-label">Amount Payed</label>
+                            <label for="amount_paid" class="form-label">To'langan miqdor</label>
                             <input name="amount_paid" type="number" class="form-control" id="amount_paid" aria-label="Amount Paid" required>
                         </div>
-                        <button type="submit" class="btn btn-success w-100">Create Sale</button>
+                        <button type="submit" class="btn btn-success w-100">Savdo yaratish</button>
                     </div>
                 </div>
             </div>

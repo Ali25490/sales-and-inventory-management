@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container px-5">
-    <h1 class="my-4">{{ form.instance.pk|yesno:"Edit Vendor,Add Vendor" }}</h1>
+    <h1 class="my-4">{{ form.instance.pk|yesno:"Sotuvchini tahrirlash, Sotuvchini qo'shish" }}</h1>
     <form method="post" novalidate>
         {% csrf_token %}
         {{ form.as_p }}

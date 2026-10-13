@@ -1,4 +1,4 @@
-{% extends "store/base.html" %} {% load static %}{% block title %}Transaction detail{% endblock %}
+{% extends "store/base.html" %} {% load static %}{% block title %}Tranzaksiya tafsilotlari{% endblock %}
 {% block content %}
 <style>
 	section .receipt {
@@ -310,17 +310,17 @@
 <div>
 <div class="text-center py-3">
 	<a href="#" class="btn btn-outline-success btn-sm">
-		<i class="fa fa-print"></i> Print
+		<i class="fa fa-print"></i> Chop etish
 	</a>
 </div>
 <section class="receipt container-ticket">
     <div class="ticket">
         <div class="head-ticket">
             <p class="x-bold">InventoryMS</p>
-            <p class="bold">Tom Mboya Street, Tudor</p>
-            <p class="bold">Tel: +2547 00 000000</p>
+            <p class="bold">Uzbekistan, Wall street</p>
+            <p class="bold">Tel: +998987654321</p>
             <br>
-            <p class="bold">P.O BOX. 90420-80100 MSA</p>
+            <p class="bold">Uzb</p>
             <p>Date: {{ sale.date_added|date:"Y/m/d H:i:s" }}</p>
             <p>Receipt code: IMS{{ sale.id }}</p>
             <div class="code-barre">
@@ -380,30 +380,30 @@
             <div class="produits">
                 <div class="hr-sm"></div>
                 <div class="col2">
-                    <p>Sub Total</p>
+                    <p>Sub jami</p>
                     <p class="prix"><b>Ksh {{ sale.sub_total }}</b></p>
                 </div>
                 <br>
                 <div class="col2">
-                    <p>Tax Amount</p>
+                    <p>Soliq miqdori</p>
                     <p class="prix"><b>Ksh {{ sale.tax_amount }}</b></p>
                 </div>
                 <div class="col2">
-                    <p>Grand Total</p>
-                    <p class="prix"><b>Ksh {{ sale.grand_total }}</b></p>
+                    <p>Umumiy jami</p>
+                    <p class="prix"><b>sum {{ sale.grand_total }}</b></p>
                 </div>
                 <div class="col2">
-                    <p>Amount Paid</p>
-                    <p class="prix"><b>Ksh {{ sale.amount_paid }}</b></p>
+                    <p>To'langan miqdor</p>
+                    <p class="prix"><b>sum {{ sale.amount_paid }}</b></p>
                 </div>
                 <div class="col2">
-                    <p>Balance</p>
-                    <p class="prix"><b>Ksh {{ sale.amount_change }}</b></p>
+                    <p>Balans</p>
+                    <p class="prix"><b>sum {{ sale.amount_change }}</b></p>
                 </div>
             </div>
             <div class="hr-lg"></div>
             <div class="carte">
-                <p class="title-carte">Customer: {{ sale.customer.first_name }}</p>
+                <p class="title-carte">Mijoz: {{ sale.customer.first_name }}</p>
             </div>
             <div class="hr-lg"></div>
         </div>

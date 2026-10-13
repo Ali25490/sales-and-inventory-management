@@ -2,21 +2,21 @@
 {% load static %}
 {% load render_table from django_tables2 %}
 {% load querystring from django_tables2 %}
-{% block title %}Sales{% endblock title %}
+{% block title %}Sotish{% endblock title %}
 {% block content %}
 <!-- Header Section -->
 <div class="container my-4">
     <div class="card shadow-sm rounded p-3">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h4 class="display-6 mb-0 text-success">Sales</h4>
+                <h4 class="display-6 mb-0 text-success">Sotish</h4>
             </div>
             <div class="col-md-6 d-flex justify-content-end gap-2">
                 <a class="btn btn-success btn-sm rounded-pill shadow-sm" href="{% url 'sale-create' %}">
-                    <i class="fa-solid fa-plus"></i> Add Sale Order
+                    <i class="fa-solid fa-plus"></i> Sotish buyurtmasini qo'shish
                 </a>
                 <a class="btn btn-primary btn-sm rounded-pill shadow-sm" href="{% url 'sales-export' %}">
-                    <i class="fa-solid fa-download"></i> Export to Excel
+                    <i class="fa-solid fa-download"></i> Excelga eksport qilish
                 </a>
             </div>
         </div>
@@ -37,14 +37,14 @@
             <tr>
                 <th>ID</th>
                 <th>Date</th>
-                <th>Customer</th>
-                <th>Sub Total</th>
-                <th>Grand Total</th>
-                <th>Tax Amount</th>
-                <th>Tax Percentage</th>
-                <th>Amount Paid</th>
-                <th>Amount Change</th>
-                <th>Actions</th>
+                <th>Mijoz</th>
+                <th>Sub jami</th>
+                <th>Umumiy jami</th>
+                <th>Soliq miqdori</th>
+                <th>Soliq ulushi</th>
+                <th>To'langan miqdor</th>
+                <th>Miqdorni o'zgartirish</th>
+                <th>Harakatlar</th>
             </tr>
         </thead>
         <tbody>
@@ -61,7 +61,7 @@
                 <td>{{ sale.amount_change }}</td>
                 <td>
                     <a class="btn btn-outline-info btn-sm" href="{% url 'sale-detail' sale.id %}">
-                        <i class="fa-solid fa-eye"></i> View Details
+                        <i class="fa-solid fa-eye"></i> Tafsilotlarni ko'rish
                     </a>
                 </td>
             </tr>

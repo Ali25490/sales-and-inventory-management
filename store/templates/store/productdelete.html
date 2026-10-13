@@ -1,11 +1,11 @@
-{% extends "store/base.html" %} {% block title %}Confirm delete{% endblock %}
+{% extends "store/base.html" %} {% block title %}O'chirishni tasdiqlang{% endblock %}
 {% block content %}
 <div class="container pt-5">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Delete Item</legend>
-            <h5>Are you sure you want to delete the item "{{ object.name }}"</h5>
+            <legend class="border-bottom mb-4">Elementni o'chirish</legend>
+            <h5>Haqiqatan ham elementni oʻchirib tashlamoqchimisiz "{{ object.name }}"</h5>
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-danger btn-sm" type="submit">Yes, Delete</button>

@@ -14,10 +14,10 @@
       </style>
     <div class="d-flex justify-content-between mb-3">
         <a class="btn btn-success btn-sm" href="{% url 'profile-create' %}">
-            <i class="fa-solid fa-user-plus me-2"></i>Add Staff
+            <i class="fa-solid fa-user-plus me-2"></i>Xodimlarni qo'shish
         </a>
         <a class="btn btn-success btn-sm" href="{% querystring '_export'='xlsx' %}">
-            <i class="fa-solid fa-download me-2"></i>Export to Excel
+            <i class="fa-solid fa-download me-2"></i>Excelga eksport qilish
         </a>
     </div>
     <table class="table table-sm table-bordered table-striped">
@@ -45,20 +45,20 @@
                 <td>{{ profile.telephone }}</td>
                 <td>
                     {% if profile.status == 'A' %}
-                    <span class="badge bg-success text-light">Active</span>
+                    <span class="badge bg-success text-light"> Faol</span>
                     {% elif profile.status == 'OL' %}
-                    <span class="badge bg-warning text-dark">On Leave</span>
+                    <span class="badge bg-warning text-dark"> Ta'tilda </span>
                     {% else %}
-                    <span class="badge bg-danger text-light">Inactive</span>
+                    <span class="badge bg-danger text-light"> Faol emas</span>
                     {% endif %}
                 </td>
                 <td>
                     {% if profile.role == 'AD' %}
                     Admin
                     {% elif profile.role == 'EX' %}
-                    Executive
+                    Ijrochi
                     {% else %}
-                    Operative
+                    Amaldagi
                     {% endif %}
                 </td>
                 <td>

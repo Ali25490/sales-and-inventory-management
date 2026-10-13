@@ -8,7 +8,7 @@
                 <div class="col-md-8">
                     <table class="table table-borderless">
                         <thead>
-                            <span class="h4">Profile Information</span class="h4">
+                            <span class="h4">Profil haqida ma'lumot</span class="h4">
                             <a class="btn btn-outline-success btn-sm float-end" href="{% url 'user-profile-update' %}">Edit profile</a>
                             <hr>
                         </thead>
@@ -18,7 +18,7 @@
                                 <td>{{ user.username }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Staff role</th>
+                                <th scope="row">Xodimning roli</th>
                                 <td>
                                     <span class="badge badge-pill bg-soft-success text-success me-2">
                                     {% if user.profile.role == 'AD' %}
@@ -31,11 +31,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">First name</th>
+                                <th scope="row">Ism</th>
                                 <td>{{ user.profile.first_name }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Last name</th>
+                                <th scope="row">Familiya</th>
                                 <td>{{ user.profile.last_name }}</td>
                             </tr>
                             <tr>
@@ -43,7 +43,7 @@
                                 <td>{{ user.email }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Phone</th>
+                                <th scope="row">Telefon</th>
                                 <td>{{ user.profile.telephone }}</td>
                             </tr>
                         </tbody>
