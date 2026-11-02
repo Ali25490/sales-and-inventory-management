@@ -16,10 +16,11 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = [
-    '://onrender.com',
+    '.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
+
 
 
 CSRF_TRUSTED_ORIGINS = [
